@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/logo.png">
+    <title>Weather</title>
+</head>
+<body>
+    <div class="main-content">
+    {{>header}}
+    
+    <h4>This is a real time weather application</h4>
+
+    <form action="">
+        <input type="text" placeholder="Enter location">
+        <button>Search</button>
+
+        <p id='msg-1'></p>
+        <p id="msg-2"></p>
+    </form>
+    </div>
+
+    {{>footer}}
+
+    <script src="/js/client.js"></script>
+</body>
+</html>
