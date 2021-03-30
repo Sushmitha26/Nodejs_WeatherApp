@@ -9,6 +9,7 @@ console.log(__filename)
 console.log(path.join(__dirname, '../public/')) //setting path to serve static files
 
 const app = express() //variable to store our Express application.Express function doesn't take in any arguments. Instead we configure our server by using various methods provided on the application itself.
+const port = process.env.PORT || 3000 //env is an object and it's where we can access environment variables. Now this is exactly what Heroku sets for port
 
 //define paths for express config 
 const publicDirectoryPath = path.join(__dirname, '../public/')
@@ -71,6 +72,12 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000...')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })  //starting up the server, process of starting up a server isn't a synchronous process 
+
+
+//start script in package.json tells Heroku how to start up our app and the value is the command to run
+
+//npm run start - this is a command we can run to start up our application locally.
+//This is the exact command that Heroku is going to run to start up our application on their servers.
